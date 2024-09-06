@@ -1,0 +1,50 @@
+Problem 1:
+1929[Concatenation of Array]
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int a = nums.length;
+        int[] ans = new int[2 * a];
+        
+        for(int i = 0 ; i < a ; i++){
+            ans[i] = nums[i];
+            ans[i+a] = nums[i];
+        }
+        return ans;
+    }
+}
+
+Problem 2:
+1480[Running Sum of 1d Array]
+class Solution {
+    public int[] runningSum(int[] nums) {
+        int[] ans = new int[nums.length];
+        int sum = 0;
+        for(int i = 0; i < nums.length;i++){
+            sum = sum + nums[i];
+            ans[i] = sum;
+        }
+        return ans;
+    }
+}
+
+Problem 3:
+Way Too Long Words
+import java.util.*;
+public class wayTooLongWords {
+        public static void main(String[] args){
+            Scanner sc = new Scanner(System.in);
+            int n = sc.nextInt();
+            sc.nextLine();
+            for(int i = 0; i < n; i++) {
+                String str = sc.nextLine();
+                int a = str.length();
+ 
+                if (a > 10) {
+                    System.out.println("" + str.charAt(0) + (a - 2) + str.charAt(a - 1));
+//                System.out.print(str.charAt(0) + a - 2 + str.charAt(a-1));
+                }else {
+                    System.out.println(str);
+                }
+            }
+        }
+    }
