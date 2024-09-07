@@ -1,0 +1,81 @@
+Problem 1:  Richest Customer Wealth
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int max = 0;
+        int sum = 0;
+        for(int i = 0;  i < accounts.length; i++){
+            for(int j = 0; j < accounts[i].length; j++){
+                sum += accounts[i][j];
+            }
+            if(max < sum){
+                max = sum;
+            }
+            sum = 0;
+        }
+        return max;
+    }
+}
+
+
+Problem 2 : Number of Good Pairs
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        int count = 0;
+        for(int i = 0 ; i < nums.length;i++){
+            for(int j= 0 ; j < nums.length;j++){
+                if(nums[i] == nums[j]){
+                    if(i != j){
+                    count++;
+                    }
+                }
+            }
+        }
+        return count/2;
+    }
+}
+
+Problem 3 : Team
+import java.util.Scanner;
+public class team {
+    public static void main(String[] args) {
+ 
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+ 
+        int sum = 0;
+ 
+        for (int i = 0; i < n; i++) {
+            String str = sc.nextLine();
+            str = str.replaceAll(" ", "");
+            int num = Integer.parseInt(str);
+ 
+            if(num > 100 || num == 11){
+                sum++;
+            }
+        }
+        System.out.println(sum);
+    }
+}
+
+Problem 4: Bit++
+import java.util.Scanner;
+public class bit {
+    public static void main(String[] args) {
+        int x = 0;
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        sc.nextLine();
+ 
+ 
+        for(int i = 0; i < a ; i++){
+            String str = sc.nextLine();
+            if(str.equals("X++") || str.equals("++X")){
+                x++;
+            }else {
+                x--;
+            }
+        }
+        System.out.println(x);
+    }
+}
