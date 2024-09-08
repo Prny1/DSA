@@ -1,0 +1,32 @@
+Problem 1 : How Many Numbers Are Smaller Than the Current Number       https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        int[] ans = new int[nums.length];
+
+        for(int i =  0 ; i < nums.length ; i++){
+            int count = 0;
+            for(int j  = 0 ; j < nums.length ; j++){
+                int min = 0;
+                if(nums[i] > nums[j]){
+                count++;
+                }
+            }
+            ans[i] = count;
+        }
+        return ans;
+    }
+}
+
+Problem 2 : Domino piling      https://codeforces.com/contest/50/problem/A
+import java.util.Scanner;
+public class domino {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int l = sc.nextInt();
+        int b = sc.nextInt();
+        int nos = l * b / 2;
+        System.out.println(nos);
+        
+    }
+}
+
