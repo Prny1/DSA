@@ -1,4 +1,4 @@
-Problem 1 : How Many Numbers Are Smaller Than the Current Number       https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/
+Problem 1 : How Many Numbers Are Smaller Than the Current Number       
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
         int[] ans = new int[nums.length];
@@ -17,7 +17,7 @@ class Solution {
     }
 }
 
-Problem 2 : Domino piling      https://codeforces.com/contest/50/problem/A
+Problem 2 : Domino piling      
 import java.util.Scanner;
 public class domino {
     public static void main(String[] args) {
