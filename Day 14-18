@@ -1,0 +1,238 @@
+Problem 1 : Hulk 
+https://codeforces.com/contest/705/problem/A
+// package Question;
+
+import java.util.Scanner;
+
+public class hulk {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        for (int i = 1; i <= a; i++) {
+            if(i % 2 == 0){
+                System.out.print("I love");
+            }else{
+                System.out.print("I hate");
+            }
+            for(int j = i; j <= a; j++){
+                if(j == a){
+                    System.out.print(" it ");
+                    break;
+                }else{
+                    System.out.print(" that ");
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
+Problem 2 : Divisibility Problem
+https://codeforces.com/contest/1328/problem/A
+// package Question;
+ 
+import java.util.Scanner;
+ 
+public class divisibilityProblem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        for (int i = 1; i <= a; i++) {
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            if (b % c == 0) {
+                System.out.println("0");
+            } else {
+                int d = c - (b % c);
+                System.out.println(d);
+            }
+        }
+    }
+}
+
+Problem 3 : Bear and Big Brother
+https://codeforces.com/contest/791/problem/A
+// package Question;
+
+import java.util.Scanner;
+
+public class bearAndBigBrother {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int years = 0;
+        do{
+            a = a*3;
+            b = b*2;
+            years++;
+
+        }while(a <= b);
+
+        System.out.println(years);
+    }
+}
+
+Problem 4: Boy or Girl
+https://codeforces.com/contest/236/problem/A
+import java.util.Scanner;
+
+public class boyOrGirl {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String result = " ";
+        int count = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            if(!(result.contains(Character.toString(str.charAt(i))))){
+                count++;
+            }
+            result += Character.toString(str.charAt(i));
+        }
+        System.out.println(count % 2 == 0?"CHAT WITH HER!":"IGNORE HIM!" );
+    }
+}
+
+Problem 5 : Police Recruits
+https://codeforces.com/contest/427/problem/A
+// package Question;
+
+import java.util.Scanner;
+
+public class policeRecruits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int event = sc.nextInt();
+        int[] arr = new int[event];
+        int hired = 0;
+        int untracked = 0;
+        for (int i = 0; i < event; i++) {
+            arr[i] = sc.nextInt();
+            if(arr[i] == -1){
+                if(hired > 0){
+                    hired--;
+                }else{
+                    untracked++;
+                }
+            }if(arr[i] > 0){
+                hired = arr[i] + hired;
+            }
+        }
+        System.out.println(untracked);
+    }
+}
+
+
+Problem 6 :  Plus or Minus
+https://codeforces.com/contest/1807/problem/A
+// package Question;
+
+import java.util.Scanner;
+
+public class plusOrMinus {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int testCases = sc.nextInt();
+        for (int i = 0; i < testCases; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            if(a + b == c){
+                System.out.println("+");
+            }else {
+                System.out.println("-");
+            }
+        }
+    }
+}
+
+Problem 7 : Spiral Matrix
+https://leetcode.com/problems/spiral-matrix/description/
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+         ArrayList<Integer> numbers = new ArrayList<>();
+        int colFirst = 0;
+        int colLast = matrix[0].length -1;
+        int rowFirst = 0;
+        int rowLast = matrix.length - 1;
+        while(rowFirst <= rowLast && colFirst <= colLast){
+            for(int i = colFirst; i <= colLast; i++ ){
+                numbers.add(matrix[rowFirst][i]);
+            }
+            rowFirst++;
+            for(int i = rowFirst; i <= rowLast ; i++){
+                numbers.add(matrix[i][colLast]);
+            }
+            colLast--;
+           if(rowFirst <= rowLast){
+            for(int i = colLast; i >= colFirst; i--){
+                numbers.add(matrix[rowLast][i]);
+            }
+            rowLast--;
+           }
+           if(colFirst <= colLast){
+            for(int i = rowLast; i>= rowFirst; i-- ){
+                numbers.add(matrix[i][colFirst]);
+            }
+            colFirst++;
+           }
+        }
+        return numbers;
+        
+    }
+}
+Problem 8 : Spiral Matrix II
+https://leetcode.com/problems/spiral-matrix-ii/description/
+class Solution {
+    public int[][] generateMatrix(int a) {
+        int[][] arr = new int[a][a];
+        int colFirst = 0;
+        int colLast = arr[0].length -1;
+        int rowFirst = 0;
+        int rowLast = arr.length - 1;
+        int x = 1;
+        while(rowFirst<=rowLast && colFirst<=colLast) {
+            for(int j = colFirst; j <= colLast; j++) {
+                arr[rowFirst][j] = x;
+                x++;
+            }
+            rowFirst++;
+            for(int i = rowFirst ; i <= rowLast ; i++){
+                arr[i][colLast] = x;
+                x++;
+            }
+            colLast--;
+            for(int i = colLast ; i >= colFirst ; i--){
+                arr[rowLast][i] = x;
+                x++;
+            }
+            rowLast--;
+            for(int i = rowLast ; i >= rowFirst ; i--){
+                arr[i][colFirst] = x;
+                x++;
+            }
+            colFirst++;
+        }
+        return arr;
+    }
+}
+Problem 9 : Matrix Diagonal Sum
+https://leetcode.com/problems/matrix-diagonal-sum/description/
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int sum = 0;
+        int n= mat.length-1;
+        for(int i = 0; i<= n ; i++){
+            for(int j = 0 ; j <= n ; j++){
+                if(i == j){
+                    sum = sum + mat[i][j];
+                }else if(i + j == n){
+                    sum = sum + mat[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+}
