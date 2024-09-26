@@ -1,0 +1,62 @@
+Problem 1 : Ultra-Fast Mathematician
+https://codeforces.com/contest/61/problem/A
+// package Question;
+
+import java.util.Scanner;
+
+public class ultraFastMathematician {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String num1 = sc.nextLine();
+        String num2 = sc.nextLine();
+       for (int i = 0; i < num1.length(); i++) {
+           if (num1.charAt(i) == num2.charAt(i)) {
+               System.out.print("0");
+           }else{
+               System.out.print("1");
+           }
+       }
+    }
+}
+
+Problem 2 : Marathon
+https://codeforces.com/contest/1692/problem/A
+// package Question;
+
+import java.util.Scanner;
+
+public class Marathon {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int testCases = sc.nextInt();
+        int count = 0;
+        long[] arr = new long[4];
+        for (int i = 0; i < testCases; i++) {
+            for (int j = 0; j < 4; j++) {
+                arr[j] = sc.nextLong();
+                if(arr[0]<arr[j]){
+                    count++;
+                }
+            }
+            System.out.println(count);
+            count = 0;
+        }
+    }
+}
+
+Problem 3 : Flipping an Image
+https://leetcode.com/problems/flipping-an-image/description/
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+        int[][] result = new int[image.length][image.length];
+        for(int i = 0; i< image.length ; i++){
+            int start = 0; int end = image.length -1;
+                while(start<=end){
+                    result[i][start] = image[i][end]^1;
+                    result[i][end]= image[i][start] ^1;
+                    start++;end--; 
+                }
+        }
+        return result;
+    }
+}
