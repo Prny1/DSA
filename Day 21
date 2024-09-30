@@ -1,0 +1,44 @@
+Problem 1 : Sqrt(x)
+https://leetcode.com/problems/sqrtx/description/
+class Solution {
+    public int mySqrt(int x) {
+        if(x == 0)return 0;
+        int start  = 1;
+        int end = x;
+        int result = 0;
+
+        while(start <= end){
+            int mid = start + (end-start)/2;
+            if(mid == x / mid){
+                return mid ;
+            }else if(mid < x/mid){
+                start = mid + 1;
+                result = mid;
+            }else{
+                end = mid -1;
+            }
+        }
+        return result;
+    }
+}
+
+Problem 2 : Guess Number Higher or Lower
+https://leetcode.com/problems/guess-number-higher-or-lower/description/
+public class Solution extends GuessGame {
+    public int guessNumber(int n) {
+        int start = 0;
+        int end = n;
+        while(start <= end){
+            int mid = start + (end - start)/2;
+            int result = guess(mid);
+            if(result == 0){
+                return mid;
+            }else if(result == -1){
+                end = mid -1;
+            }else{
+                start = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
