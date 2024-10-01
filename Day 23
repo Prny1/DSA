@@ -1,0 +1,46 @@
+Problem 1 : Find N Unique Integers Sum up to Zero
+Problem - https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/description/
+class Solution {
+    public int[] sumZero(int n) {
+        int i = n /2;
+        int[] ans = new int[n];
+        while(n-- > 0){
+            if(i == 0 && ans.length % 2 != 0){
+                i--;
+            }else{
+                if(i == 0){
+                    i--;
+                }
+                    ans[n] = i--;
+                
+            }
+        }
+        return ans;
+    }
+}
+
+
+Problem 2 : Stair, Peak, or Neither?
+Problem - https://codeforces.com/contest/1950/problem/A
+import java.util.Scanner;
+ 
+public class stairPeakOrNeither {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int testCases = sc.nextInt();
+        int[] arr = new int[3];
+        for (int i = 0; i < testCases; i++) {
+            for (int j = 0; j < 3; j++) {
+                arr[j] = sc.nextInt();
+            }
+            if(arr[0]<arr[1] & arr[1]>arr[2]){
+                System.out.println("PEAK");
+            }else if(arr[0]<arr[1] & arr[1]<arr[2]){
+                System.out.println("STAIR");
+            }else{
+                System.out.println("NONE");
+            }
+ 
+        }
+    }
+}
