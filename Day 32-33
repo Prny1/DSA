@@ -1,0 +1,86 @@
+Problem 1 : Set Mismatch
+Problem -https://leetcode.com/problems/set-mismatch/description/
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+        int i = 0 ;
+        int[] arr = new int[2]; 
+        while(i < nums.length){
+            int current = nums[i] - 1;
+            if(i == current){
+                i++;
+            }else{
+                if(nums[i]== nums[current]){
+                    arr[0]= nums[i];
+                    i++;
+                }else{
+                    swap(current , nums , i);
+                }
+            }
+        }
+        System.out.print(Arrays.toString(nums));
+        for(int j = 0 ; j < nums.length ; j++){
+            if(nums[j] != j + 1){
+                arr[1] = j + 1;
+            }
+        }
+        return arr;
+    }
+    static int[] swap(int current , int[] nums , int i ){
+        int temp = nums[current];
+        nums[current] = nums[i];
+        nums[i] = temp;
+        return nums;
+    }
+}
+Problem 2 : Next Round
+Problem - https://codeforces.com/contest/158/problem/A
+import java.util.Scanner;
+ 
+public class rounds{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int[] arr = new int[n];
+//        String str = "";
+        int count = 0;
+        for(int i = 0 ; i < n ; i++){
+            arr[i] = sc.nextInt();
+        }
+        for(int i = 0 ; i < n ; i++){
+            if(arr[i] > 0){
+            if(i < k ){
+//                str += 1;
+                count++;
+            }if(i>=k){
+                if(arr[k-1] == arr[k]) {
+//                str += 1;
+                    count++;
+                k++;
+                }
+            }
+        }
+        }
+//        System.out.println(str);
+//        System.out.println(str.length());
+        System.out.println(count);
+    }
+}
+Problem 3 :  Love Story
+Problem -https://codeforces.com/contest/1829/problem/A
+import java.util.*;
+public class LoveStory {
+	public static void main(String[] args) {
+		Scanner sc = new  Scanner(System.in);
+		int t = sc.nextInt();
+		while(t-->0) {
+			String s1 = sc.next(),s2 = "codeforces";
+			int n = 0;
+			for(int i = 0;i<10;i++) {
+				if(s1.charAt(i)!=s2.charAt(i))
+					n++;
+			}
+			System.out.println(n);
+		}
+	}
+}
