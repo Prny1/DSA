@@ -1,0 +1,29 @@
+Problem 1- Maximum Subarray
+Problem : https://leetcode.com/problems/maximum-subarray/submissions/1426250983/
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int currentSum = 0;
+        int maxSum = Integer.MIN_VALUE;;
+        for(int num : nums){
+            currentSum += num;
+            if(currentSum > maxSum){
+                maxSum = currentSum;
+            }
+            if(currentSum < 0){
+                currentSum = 0;
+            }
+        }
+        return maxSum;
+    }
+}
+Problem 2- Three Brothers
+Problem : https://codeforces.com/contest/2010/problem/B
+ 
+import java.util.Scanner;
+ 
+public class ThreeBrothers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(Math.abs(6 - (sc.nextInt() + sc.nextInt())));
+    }
+}
